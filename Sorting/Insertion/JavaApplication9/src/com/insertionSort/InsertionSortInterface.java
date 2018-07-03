@@ -3,14 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package selectionSort;
+package com.insertionSort;
+
 
 /**
  *
  * @author kerch
  */
-public interface SelectionSortInterface {
+public interface InsertionSortInterface {
     
-public void sectionSort(int[] numArray);
+public void insertionSort(int[] numArray);
     
 }

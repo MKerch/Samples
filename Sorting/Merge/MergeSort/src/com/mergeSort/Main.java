@@ -3,7 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package selectionSort;
+package com.mergeSort;
+
+
 
 /**
  *
@@ -16,10 +18,10 @@ public class Main {
      */
     public static void main(String[] args) {
         
-    SelectionSortImpl selection = new SelectionSortImpl();    
+    MergeSortImpl merge = new MergeSortImpl();    
     
     int[] numArray = new int []{1,4,3,5,6,7,4,5,34,54,23,56,67};
-    selection.sectionSort(numArray);
+    merge.sort(numArray,0,numArray.length-1);
     
         for (int i : numArray) {
             System.out.println(i + " ");

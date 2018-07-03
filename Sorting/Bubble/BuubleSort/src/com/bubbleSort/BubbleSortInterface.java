@@ -3,14 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package mergesort;
+package com.bubbleSort;
+
+import bubblesort.*;
 
 /**
  *
  * @author kerch
  */
-public interface MergeSortInterface {
-
-public void sort(int arr[], int l, int r);
+public interface BubbleSortInterface {
+    
+public void bubbleSort(int[] numArray);
     
 }
