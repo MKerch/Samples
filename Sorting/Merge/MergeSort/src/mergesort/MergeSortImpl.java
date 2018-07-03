@@ -11,7 +11,7 @@ package mergesort;
  */
 public class MergeSortImpl implements MergeSortInterface {
 
-    @Override
+    //Before main sort method stage
     public void mergeSort(int arr[], int l, int m, int r) {
         // Find sizes of two subarrays to be merged
         int n1 = m - l + 1;
@@ -63,7 +63,8 @@ public class MergeSortImpl implements MergeSortInterface {
 
     // Main function that sorts arr[l..r] using
     // merge()
-    void sort(int arr[], int l, int r) {
+    @Override
+    public void sort(int arr[], int l, int r) {
         if (l < r) {
             // Find the middle point
             int m = (l + r) / 2;

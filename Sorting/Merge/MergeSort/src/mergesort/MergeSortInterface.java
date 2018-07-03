@@ -10,7 +10,7 @@ package mergesort;
  * @author kerch
  */
 public interface MergeSortInterface {
-    
-public void mergeSort(int arr[], int l, int m, int r);
+
+public void sort(int arr[], int l, int r);
     
 }
