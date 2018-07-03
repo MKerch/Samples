@@ -5,7 +5,7 @@
  */
 package com.bubbleSort;
 
-import bubblesort.*;
+
 
 /**
  *
@@ -18,7 +18,7 @@ public class Main {
      */
     public static void main(String[] args) {
         
-    BubbleSortImpl bubble = new BubbleSortImpl();    
+    BubbleSortImpl2 bubble = new BubbleSortImpl2();    
     int[] numArray = new int []{1,4,3,5,6,7,4,5,34,54,23,56,67};
     bubble.bubbleSort(numArray);
     

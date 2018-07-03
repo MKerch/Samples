@@ -5,7 +5,7 @@
  */
 package com.bubbleSort;
 
-import bubblesort.*;
+
 
 /**
  *

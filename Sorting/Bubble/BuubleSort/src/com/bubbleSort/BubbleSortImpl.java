@@ -5,8 +5,6 @@
  */
 package com.bubbleSort;
 
-import bubblesort.*;
-
 /**
  *
  * @author kerch
