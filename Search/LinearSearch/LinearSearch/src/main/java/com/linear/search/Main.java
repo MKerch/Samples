@@ -3,9 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.bubbleSort;
-
-
+package com.linear.search;
 
 /**
  *
@@ -18,12 +16,12 @@ public class Main {
      */
     public static void main(String[] args) {
         
-    BubbleSortImpl bubble = new BubbleSortImpl();    
-    int[] numArray = new int []{1,4,3,5,6,7,4,5,34,54,23,56,67};
-    bubble.bubbleSort(numArray);
-    
-        for (int i : numArray) {
-            System.out.println(i + " ");
-        }
+        int[] array = new int[]{1,4,5,6,5,34,67,8};
+        
+        SearchInterface searchInterface = new SearchInterfaceImpl();
+        int searchValue = searchInterface.search(array, 4);
+        System.out.println(searchValue);
+        
     }
+    
 }
