@@ -37,13 +37,24 @@ public class Main {
         /*Remove elements from array list like this*/
         obj.remove("Chaitanya");
         obj.remove("Harry");
-
         System.out.println("Current array list is:" + obj);
 
         /*Remove element from the given index*/
         obj.remove(1);
-
         System.out.println("Current array list is:" + obj);
+        
+        /*Returns the object of list which is present at the specified index.*/
+        String str= obj.get(2);
+        System.out.println(str);
+        
+        /*It gives the size of the ArrayList – Number of elements of the list.*/
+        int numberofitems = obj.size();
+        System.out.println(numberofitems);
+        
+        /*It checks whether the given object o is present in the array list if its there then it returns true else it returns false.*/
+        boolean contains = obj.contains("Steve");
+        System.out.println(contains);
+        
     }
 
 }
