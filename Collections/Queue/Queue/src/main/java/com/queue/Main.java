@@ -39,22 +39,23 @@ public class Main {
       System.out.println("Removed element: "+q.remove());    
       /*
        * element() method - this returns the head of the
-       * Queue. Head is the first element of Queue
+       * Queue. Head is the first element of Queue. Retrieves the value of the 
+       * first element without removing it. 
+       * Unlike peek(), however, if the list 
+       * is empty element() throws a NoSuchElementException
        */
-      System.out.println("Head: "+q.element());
-	    
+      System.out.println("Head: "+q.element());   
       /*
        * poll() method - this removes and returns the 
        * head of the Queue. Returns null if the Queue is empty
        */
       System.out.println("poll(): "+q.poll());
-	    
       /*
        * peek() method - it works same as element() method,
        * however it returns null if the Queue is empty
        */
       System.out.println("peek(): "+q.peek());
-	    
+      
       //Again displaying the elements of Queue
       System.out.println("Elements in Queue:"+q);
    
