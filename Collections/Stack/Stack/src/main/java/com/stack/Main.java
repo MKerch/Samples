@@ -34,6 +34,8 @@ public class Main {
         System.out.println("Non-Empty stack: After Pop Operation: " + stack);
         System.out.println("Non-Empty stack: search() Operation: " + stack.search(1002));
         System.out.println("Non-Empty stack: "  + stack.isEmpty());
+        
+        /*peek() looks at the object at the top of this stack without removing it from the stack*/
         System.out.println("peek(): "+ stack.peek());
     
     }
