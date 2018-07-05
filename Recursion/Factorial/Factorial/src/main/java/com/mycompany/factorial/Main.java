@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.sum.of.numbers;
+package com.mycompany.factorial;
 
 /**
  *
@@ -16,17 +16,16 @@ public class Main {
      */
     public static void main(String[] args) {
         
-        int sumOfNum = sum(5);
-        System.out.println(sumOfNum);  
+      int num = 4;   
+      int fact = factorial(num);
+        System.out.println("Factorial of " + num + " is: " + fact);
     }
 
-    public static int sum(int n) {
-        int sum = 0;
-        for (int i = 1; i <= n; i++) {
-            sum += i;
-            System.out.println(sum);
+    static int factorial(int n) {
+        if (n == 0) {
+            return 1;
+        } else {
+            return (n * factorial(n - 1));
         }
-        return sum;
     }
-
 }
