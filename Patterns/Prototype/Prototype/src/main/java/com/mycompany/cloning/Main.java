@@ -21,6 +21,8 @@ public class Main {
         shop.getBooks().remove(2);
         System.out.println(shop);
         
+        
+        //One object with two references. Deletion affect on cloned object 
         BookShop shop2 = (BookShop)shop.clone();
         shop2.setShopName("Galary");
         shop2.loadBooks();

@@ -22,6 +22,8 @@ public class Main {
         shop.loadBooks();
         System.out.println(shop);
 
+        
+        //two different objects. Deletion does not affect on cloned object 
         BookShop shop2 = shop.clone();
         shop.getBooks().remove(2);
         shop2.setShopName("Galary");
