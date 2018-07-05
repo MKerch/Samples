@@ -3,15 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.selectionSort;
-
+package com.abstractfactory;
 
 /**
  *
  * @author kerch
  */
-public interface SelectionSortInterface {
-    
-public void sectionSort(int[] numArray);
+public class Rectangle implements Shape{
+
+    @Override
+    public void draw() {
+        System.out.println("Inside Rectangle: draw() method.");
+    }
     
 }

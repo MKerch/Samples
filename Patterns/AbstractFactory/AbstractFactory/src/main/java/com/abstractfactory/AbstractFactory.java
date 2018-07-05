@@ -3,14 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mergeSort;
+package com.abstractfactory;
 
 /**
  *
  * @author kerch
  */
-public interface MergeSortInterface {
+public abstract class AbstractFactory {
 
-public void sort(int arr[], int l, int r);
-    
+    abstract Color getColor(String color);
+
+    abstract Shape getShape(String shape);
+
 }

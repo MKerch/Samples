@@ -3,15 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.insertionSort;
-
+package com.abstractfactory;
 
 /**
  *
  * @author kerch
  */
-public interface InsertionSortInterface {
+public interface Color {
     
-public void insertionSort(int[] numArray);
+    public void fill();
     
 }

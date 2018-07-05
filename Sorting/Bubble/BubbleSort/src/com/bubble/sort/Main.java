@@ -3,7 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.selectionSort;
+package com.bubble.sort;
+
+
 
 /**
  *
@@ -16,10 +18,9 @@ public class Main {
      */
     public static void main(String[] args) {
         
-    SelectionSortImpl selection = new SelectionSortImpl();    
-    
+    BubbleSortImpl bubble = new BubbleSortImpl();    
     int[] numArray = new int []{1,4,3,5,6,7,4,5,34,54,23,56,67};
-    selection.sectionSort(numArray);
+    bubble.bubbleSort(numArray);
     
         for (int i : numArray) {
             System.out.println(i + " ");
