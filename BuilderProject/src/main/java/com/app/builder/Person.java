@@ -7,9 +7,13 @@ public class Person {
     private final int age;
 
     private Person(Builder builder) {
+        if(builder.name==null||"".equals(builder.name)){
+            throw new RuntimeException("Name should not be empty");
+        }
         this.name = builder.name;
         this.sername = builder.sername;
         this.age = builder.age;
+
     }
 
     public String getName() {
@@ -42,6 +46,7 @@ public class Person {
             this.age = age;
             return this;
         }
+
         public Person build(){
             return new Person(this);
         }
