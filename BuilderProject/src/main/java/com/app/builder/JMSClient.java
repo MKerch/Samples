@@ -8,7 +8,7 @@ import javax.jms.*;
 
 public class JMSClient {
 
-    private ActiveMQConnectionFactory connectionFactory;
+    private ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory();
 
     public void publish(Person person) throws JMSException {
         Connection connection = connectionFactory.createConnection();
@@ -17,5 +17,6 @@ public class JMSClient {
         MessageProducer messageProducer = session.createProducer(queue);
         TextMessage textMessage = session.createTextMessage(person.toString());
         messageProducer.send(textMessage);
+        connection.close();
     }
 }

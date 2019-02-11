@@ -8,17 +8,25 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+
 import javax.jms.*;
 import java.util.Enumeration;
 
 public class JMSClientTest {
 
     private BrokerService broker;
+    private Connection connection;
+    private String connectionURL;
+    private String destinationName;
+
 
     @Before
     public void init() throws Exception {
+        connectionURL = System.getProperty("host", "tcp://localhost:61616");
+        destinationName = System.getProperty("queueName", "INBOUND");
         broker = new BrokerService();
-        //broker.setPersistent(false);
+        broker.addConnector(connectionURL);
+        broker.setPersistent(true);
         broker.start();
         Thread.sleep(3000);
     }
@@ -30,26 +38,30 @@ public class JMSClientTest {
         person.publish();
         Thread.sleep(3000);
         int countAfter = count();
-        Assert.assertTrue(countAfter-1==countBefore);
+        System.out.println("before= " + countBefore);
+        System.out.println("after= " + countAfter);
+        Assert.assertTrue(countAfter - 1 == countBefore);
+    }
+
+
+    private int count() throws JMSException {
+        ConnectionFactory factory = new ActiveMQConnectionFactory();
+        connection = factory.createConnection();
+        connection.start();
+        Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
+        QueueBrowser inbound = session.createBrowser(new ActiveMQQueue(System.getProperty("queueName", destinationName)));
+        Enumeration enumeration = inbound.getEnumeration();
+        int count = 0;
+        while (enumeration.hasMoreElements()) {
+            enumeration.nextElement();
+            count++;
+        }
+        return count;
     }
 
     @After
     public void after() throws Exception {
+        connection.close();
         broker.stop();
-    }
-
-    private int count() throws JMSException {
-        ConnectionFactory factory = new ActiveMQConnectionFactory();
-        Connection connection = factory.createConnection();
-        Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
-        QueueBrowser inbound = session.createBrowser(new ActiveMQQueue("INBOUND"));
-        Enumeration enumeration = inbound.getEnumeration();
-        int count=0;
-        while (enumeration.hasMoreElements()){
-            Object o = enumeration.nextElement();
-            System.out.println(o);
-            count++;
-        }
-        return count;
     }
 }
